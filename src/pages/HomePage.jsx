@@ -65,6 +65,10 @@ class HomePage extends Component {
   }
 
   render() {
+    if(this.props.weather) {
+      
+    }
+
     return (
       <div className={styles.Page}>
         <BrowserRouter>

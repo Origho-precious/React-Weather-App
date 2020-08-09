@@ -7,3 +7,12 @@ export const weatherReducer = (state = {}, action) => {
             return state
     }
 }
+
+export const errorReducer = (state = null, action) => {
+    switch(action.type){
+        case 'SEARCH_WEATHER_ERROR':
+            return action.payload
+        default:
+            return state
+    }
+}

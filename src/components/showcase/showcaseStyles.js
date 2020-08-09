@@ -37,12 +37,13 @@ export const Wrapper = styled.div`
 
     @media(max-width: 1000px){
         max-width: 100%;
+        height: 100%;
     }
 `;
 
 export const Background = styled.div`
     height: 100%;
-    max-width: 95vw;
+    max-width: 100vw;
     margin: auto;
     background: url(${cloudImg}) no-repeat top center;
     opacity: 0.4;
@@ -52,16 +53,6 @@ export const Background = styled.div`
     right: 0;
     position: absolute;
     z-index: -1;
-`;
-
-export const Flexbox = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    & i{
-        font-size: 2rem;
-    }
 `;
 
 export const SearchButton = styled(Link)`
@@ -77,6 +68,10 @@ export const SearchButton = styled(Link)`
 
     &:hover{
         opacity: 0.9;
+    }
+
+    @media(max-width: 1000px){
+        width: 100%;
     }
 `;
 

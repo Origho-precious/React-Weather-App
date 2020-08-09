@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {
     Wrapper,
     Background,
-    Flexbox,
     SearchButton,
     Image,
     Temp,
@@ -13,12 +12,10 @@ import {
     weatherImages
 } from "./showcaseStyles";
 import weatherImg from '../../assets/LightRain.png';
-import { searchWeather } from "../../redux/actions";
 import { getDate } from '../forecasts/getDate';
 
 
 class Showcase extends Component{
-
   componentDidMount() {
     this.displayWeather()
   }
@@ -52,10 +49,7 @@ class Showcase extends Component{
       return (
         <Wrapper>
           <Background />
-          <Flexbox>
             <SearchButton to="/search">Search for places</SearchButton>
-            <i className="far fa-compass"></i>
-          </Flexbox>
           { this.displayWeather() }
         </Wrapper>
       );
@@ -64,12 +58,9 @@ class Showcase extends Component{
     return (
       <Wrapper>
         <Background />
-        <Flexbox>
-          <SearchButton to="/search">
-            Search for places
-          </SearchButton>
-          <i className="far fa-compass"></i>
-        </Flexbox>
+        <SearchButton to="/search">
+          Search for places
+        </SearchButton>
         <Image src={weatherImg} />
         <Description>Loading</Description>
         <Date>Today</Date>
@@ -91,4 +82,4 @@ const mapStateToProps = ({weather}) => {
   };
 };
 
-export default connect(mapStateToProps, { searchWeather })(Showcase);
+export default connect(mapStateToProps)(Showcase);

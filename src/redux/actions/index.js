@@ -13,7 +13,7 @@ export const searchWeather = (term) => async (dispatch) => {
         })
     }else{
         dispatch({
-            type: 'SEARCH_WEATHER',
+            type: 'SEARCH_WEATHER_ERROR',
             payload: 'Not found!'
         })
     }

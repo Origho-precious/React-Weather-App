@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Wrapper, Flexbox, Input, Button, Location, Close } from './searchStyles';
+import { Wrapper, Flexbox, Input, Button, Location, Close, Alert } from './searchStyles';
 import { searchWeather } from '../../redux/actions';
 
 class Search extends Component {
@@ -26,6 +26,7 @@ class Search extends Component {
               />
               <Button onClick={this.searchHandler} type="button">Search</Button>
             </Flexbox>
+            { this.props.error ? <Alert>Search Not found!</Alert> : null }
             <Location onClick={() => this.setState({ search: "london" })}>
               London <p>&gt;</p>
             </Location>
@@ -40,9 +41,9 @@ class Search extends Component {
     }
 }
 
-const mapStateToProps = ({ weather }) => {
+const mapStateToProps = ({ error }) => {
     return {
-        weather
+        error
     }
 }
 

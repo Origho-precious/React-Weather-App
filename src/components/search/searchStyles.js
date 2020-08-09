@@ -30,7 +30,7 @@ export const Flexbox = styled.div `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4rem 0;
+    margin: 4rem 0 1rem;
 `;
 
 export const Input = styled.input`
@@ -56,6 +56,11 @@ export const Button = styled.button`
     &:hover{
         opacity: 0.8;
     }
+`;
+
+export const Alert = styled.p`
+    color: red;
+    text-align: center;
 `;
 
 export const Location = styled.div`
